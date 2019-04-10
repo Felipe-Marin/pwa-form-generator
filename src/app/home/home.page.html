@@ -6,9 +6,89 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <form>
+    <div>
+      <h2>Texto curto</h2>
+      <ion-item>
+        <ion-label position="floating">Resposta</ion-label>
+        <ion-input id="item1"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <h2>Texto longo</h2>
+      <ion-item>
+        <ion-label position="floating">Resposta</ion-label>
+        <ion-textarea id="item2"></ion-textarea>
+      </ion-item>
+    </div>
+    <div>
+      <h2>Múltipla escolha</h2>
+      <ion-list>
+        <ion-radio-group>
+          <ion-list-header>
+            <ion-label>Resposta</ion-label>
+          </ion-list-header>
+
+          <ion-item>
+            <ion-label>Opção 1</ion-label>
+            <ion-radio slot="start" value="option1" checked></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Opção 2</ion-label>
+            <ion-radio slot="start" value="option2"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Opção 3</ion-label>
+            <ion-radio slot="start" value="option3"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+      </ion-list>
+    </div>
+    <div>
+      <h2>Caixa de seleção</h2>
+      <ion-item>
+        <ion-label>Opção 1</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Opção 2</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>Opção 3</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+    </div>
+    <div>
+      <h2>Seleção</h2>
+      <ion-item>
+          <ion-label>Resposta</ion-label>
+          <ion-select value="item1" okText="Ok" cancelText="Cancelar">
+            <ion-select-option value="item1">Opção 1</ion-select-option>
+            <ion-select-option value="item2">Opção 2</ion-select-option>
+            <ion-select-option value="item3">Opção 3</ion-select-option>
+            <ion-select-option value="item4">Opção 4</ion-select-option>
+          </ion-select>
+        </ion-item>
+    </div>
+    <div>
+      <h2>Controle deslizante</h2>
+      <ion-item>
+        <ion-range snaps="true" pin="true" min="1" max="5" step="1"></ion-range>
+      </ion-item>
+    </div>
+    <div>
+      <h2>Data</h2>
+      <ion-item>
+        <ion-label>Data</ion-label>
+        <ion-datetime display-format="DD/MM/YYYY" picker-format="DD MMMM YYYY"></ion-datetime>
+      </ion-item>
+    </div>
+    <ion-button type="submit">
+      Enviar Respostas
+    </ion-button>
+  </form>
 </ion-content>
