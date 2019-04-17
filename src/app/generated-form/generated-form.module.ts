@@ -8,6 +8,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MultipleChoiceComponent } from './multiple-choice/multiple-choice.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { SelectComponent } from './select/select.component';
+import { DateComponent } from './date/date.component';
+import { SliderComponent } from './slider/slider.component';
+import { GeolocationComponent } from './geolocation/geolocation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SelectComponent } from './select/select.component';
     LongTextComponent,
     MultipleChoiceComponent,
     CheckboxComponent,
-    SelectComponent
+    SelectComponent,
+    DateComponent,
+    SliderComponent,
+    GeolocationComponent
   ],
   imports: [
     CommonModule,
