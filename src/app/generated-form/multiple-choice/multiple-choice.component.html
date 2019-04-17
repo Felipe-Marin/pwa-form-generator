@@ -1,0 +1,14 @@
+<div>
+  <h2>{{title}}</h2>
+  <ion-list>
+    <ion-radio-group (ionChange)="onChange($event.target.value)">
+      <ion-list-header>
+        <ion-label>{{label}}</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let option of options">
+        <ion-label>{{option}}</ion-label>
+        <ion-radio slot="start" value="{{option}}"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+</div>

@@ -1,5 +1,10 @@
 <div>
   <form [formGroup]="generatedForm">
-    <app-short-text [title]="'Input 1'" [label]="'Label1'" formControlName="input1"></app-short-text>
+    <app-short-text [title]="'Texto curto'" [label]="'Resposta'" formControlName="input1"></app-short-text>
+    <app-long-text [title]="'Texto longo'" [label]="'Resposta'" formControlName="input2"></app-long-text>
+    <app-multiple-choice [title]="'Escolha Múltipla'" [label]="'Resposta'" [options]="['Opção 1', 'Opção 2', 'Opção 3']" formControlName="input3"></app-multiple-choice>
+    <app-checkbox [title]="'Checkbox'" [options]="checkbox_options" formControlName="input4"></app-checkbox>
+    <app-select [title]="'Select'" [label]="'Resposta'" [placeholder]="'Opções'" [okText]="'Ok'" [cancelText]="'Cancelar'" [options]="['Opção 1', 'Opção 2', 'Opção 3']" formControlName="input5"></app-select>
+    <ion-button color="primary" (click)="printForm()">Print form on console</ion-button>
   </form>
 </div>
