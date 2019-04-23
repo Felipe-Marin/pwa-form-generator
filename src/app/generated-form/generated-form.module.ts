@@ -11,6 +11,7 @@ import { SelectComponent } from './select/select.component';
 import { DateComponent } from './date/date.component';
 import { SliderComponent } from './slider/slider.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
+import { NgForageConfig, Driver } from 'ngforage';
 
 @NgModule({
   declarations: [
@@ -36,4 +37,11 @@ import { GeolocationComponent } from './geolocation/geolocation.component';
     LongTextComponent
   ]
 })
-export class GeneratedFormModule { }
+export class GeneratedFormModule {
+  public constructor(ngfConfig: NgForageConfig) {
+    ngfConfig.configure({
+      name: 'FormGenerator',
+      driver: [Driver.INDEXED_DB]
+    });
+  }
+}
