@@ -12,6 +12,8 @@ import { DateComponent } from './date/date.component';
 import { SliderComponent } from './slider/slider.component';
 import { GeolocationComponent } from './geolocation/geolocation.component';
 import { NgForageConfig, Driver } from 'ngforage';
+import { FormLocalStorageService } from './services/form-local-storage.service';
+import { ServerService } from './services/server.service';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,10 @@ import { NgForageConfig, Driver } from 'ngforage';
     FormComponent,
     ShortTextComponent,
     LongTextComponent
+  ],
+  providers: [
+    FormLocalStorageService,
+    ServerService
   ]
 })
 export class GeneratedFormModule {

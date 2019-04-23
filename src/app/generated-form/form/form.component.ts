@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
+import { ServerService } from '../services/server.service';
 
 @Component({
   selector: 'app-form',
@@ -18,7 +19,7 @@ export class FormComponent implements OnInit {
     {val: 'Opção 4', isChecked: false}
   ];
 
-  constructor() { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit() {
     this.generatedForm = new FormGroup ({
@@ -32,6 +33,11 @@ export class FormComponent implements OnInit {
 
   printForm() {
     console.log(this.generatedForm.value);
+  }
+
+  submitForm() {
+    console.log(this.generatedForm.value);
+    this.serverService.sendForm(this.generatedForm.value);
   }
 
 }

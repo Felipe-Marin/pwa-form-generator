@@ -22,7 +22,7 @@ export class ServerService {
       formRequest.status = FormRequestStatus.sended;
       this.localStorageService.setForm(formRequest);
     } else {
-      if ('serviceWorker' in navigator && 'SyncManager' in Window) {
+      if ('serviceWorker' in navigator && 'SyncManager' in window) {
         navigator.serviceWorker.ready.then(sw => {
           sw.sync.register('syncForm')
             .catch(err => {
