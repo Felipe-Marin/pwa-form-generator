@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1555478742283,
+  "timestamp": 1556082762997,
   "index": "/coleta-template-ionic/index.html",
   "assetGroups": [
     {
@@ -49,7 +49,7 @@
         "/coleta-template-ionic/137.3fb2a122ccc1e5be1787.js",
         "/coleta-template-ionic/138.27cfbd9dba43b3976e72.js",
         "/coleta-template-ionic/139.373155c4e5284dc61dd9.js",
-        "/coleta-template-ionic/14.51613c775dbe6235089a.js",
+        "/coleta-template-ionic/14.a656bfaabcc5451b491e.js",
         "/coleta-template-ionic/140.4bbe38cd2977da7ce010.js",
         "/coleta-template-ionic/141.4d678d6fdd4e77450339.js",
         "/coleta-template-ionic/142.0ebae61cc724e0716438.js",
@@ -182,11 +182,12 @@
         "/coleta-template-ionic/99.88e26edf0c2d32bec742.js",
         "/coleta-template-ionic/common.edbf03755476c3e22003.js",
         "/coleta-template-ionic/es2015-polyfills.2306969ab6640fe7476f.js",
+        "/coleta-template-ionic/form-sw.js",
         "/coleta-template-ionic/index.html",
-        "/coleta-template-ionic/main.c5442188bab2dad1ea6b.js",
+        "/coleta-template-ionic/main.749495e7e2194db082ed.js",
         "/coleta-template-ionic/polyfills.345bad1220e572dc7440.js",
-        "/coleta-template-ionic/runtime.bcd4898fd9d03fe0af10.js",
-        "/coleta-template-ionic/styles.3fa547c05c119897e9aa.css"
+        "/coleta-template-ionic/runtime.e758a1c29ac38f1efeb5.js",
+        "/coleta-template-ionic/styles.c8c2dc97bb40cadf1768.css"
       ],
       "patterns": []
     },
@@ -252,7 +253,7 @@
     "/coleta-template-ionic/137.3fb2a122ccc1e5be1787.js": "58addb6eaf1cf816526a9566a42c61a42afe7679",
     "/coleta-template-ionic/138.27cfbd9dba43b3976e72.js": "fe5d834a9a69868a06961e63245045cd10e41767",
     "/coleta-template-ionic/139.373155c4e5284dc61dd9.js": "5a2e9c188bbc4a16175406adc24d61674ef9ecf8",
-    "/coleta-template-ionic/14.51613c775dbe6235089a.js": "27d7d07a7e86c7b629c856e70324954669d43614",
+    "/coleta-template-ionic/14.a656bfaabcc5451b491e.js": "e5769302f3f1cfd7b270505f2f44a694bc195669",
     "/coleta-template-ionic/140.4bbe38cd2977da7ce010.js": "f9ef71d9fa90b7dc99474efb77f40eda6a4b5e43",
     "/coleta-template-ionic/141.4d678d6fdd4e77450339.js": "cb8f95bd7a5a87229d91b46491cd863d48ea2b01",
     "/coleta-template-ionic/142.0ebae61cc724e0716438.js": "b7d676cd3871058298dbf6b4d956f4a330f6ef0c",
@@ -395,11 +396,12 @@
     "/coleta-template-ionic/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/coleta-template-ionic/common.edbf03755476c3e22003.js": "2e623c46660b21947e2eab8778b4a3b78d840ad4",
     "/coleta-template-ionic/es2015-polyfills.2306969ab6640fe7476f.js": "b00a4b2850c0d7915e682a20ae74ef3501252dda",
-    "/coleta-template-ionic/index.html": "bda18bab597742ccc9f404f8773219e6a11833c3",
-    "/coleta-template-ionic/main.c5442188bab2dad1ea6b.js": "8cce05fda244fcc7858d7a8558b0c77d45c5bbaf",
+    "/coleta-template-ionic/form-sw.js": "7c3ea6b200920269082010e837186edd5e6e5c36",
+    "/coleta-template-ionic/index.html": "178eb685cac0f4645903ef661e9e491f1bb77dde",
+    "/coleta-template-ionic/main.749495e7e2194db082ed.js": "b1895dff63b153c12f499b0cf2dd78acdff136bd",
     "/coleta-template-ionic/polyfills.345bad1220e572dc7440.js": "3947bf302a3725a992ce97d785fdbbc932f33be2",
-    "/coleta-template-ionic/runtime.bcd4898fd9d03fe0af10.js": "8f8a87688eda50c7988b74e8f75d124f698a075b",
-    "/coleta-template-ionic/styles.3fa547c05c119897e9aa.css": "f7cc8830b5d21d6bcb9d76731767985e78e42765"
+    "/coleta-template-ionic/runtime.e758a1c29ac38f1efeb5.js": "529f26cb030b8422ba24b8073e0cff993de84430",
+    "/coleta-template-ionic/styles.c8c2dc97bb40cadf1768.css": "d4dad3fd638a72f91a48c66c8e6eb16365d8662e"
   },
   "navigationUrls": [
     {
