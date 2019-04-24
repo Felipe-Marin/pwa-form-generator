@@ -27,7 +27,9 @@ export class FormComponent implements OnInit {
       input2: new FormControl(),
       input3: new FormControl(),
       input4: new FormControl(),
-      input5: new FormControl()
+      input5: new FormControl(),
+      input6: new FormControl(),
+      input7: new FormControl()
     });
   }
 

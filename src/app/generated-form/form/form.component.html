@@ -5,6 +5,8 @@
     <app-multiple-choice [title]="'Escolha Múltipla'" [label]="'Resposta'" [options]="['Opção 1', 'Opção 2', 'Opção 3']" formControlName="input3"></app-multiple-choice>
     <app-checkbox [title]="'Checkbox'" [options]="checkbox_options" formControlName="input4"></app-checkbox>
     <app-select [title]="'Select'" [label]="'Resposta'" [placeholder]="'Opções'" [okText]="'Ok'" [cancelText]="'Cancelar'" [options]="['Opção 1', 'Opção 2', 'Opção 3']" formControlName="input5"></app-select>
+    <app-slider [title]="'Slider'" [min]="1" [max]="5" [step]="1" formControlName="input6"></app-slider>
+    <app-date [title]="'Data'" [label]="'Data'" [display]="'DD/MM/YYYY'" [picker]="'DD MM YYYY'" formControlName="input7"></app-date>
     <ion-button color="primary" (click)="submitForm()">Submit Form</ion-button>
   </form>
 </div>
