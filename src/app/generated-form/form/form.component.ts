@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup, NgForm} from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 import { ServerService } from '../services/server.service';
 
 @Component({
@@ -40,7 +41,7 @@ export class FormComponent implements OnInit {
     'Resposta select 4',
   ];
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService, public alertController: AlertController) { }
 
   ngOnInit() { }
 
@@ -51,6 +52,17 @@ export class FormComponent implements OnInit {
   submitForm() {
     console.log(this.generatedForm.value);
     this.serverService.sendForm(this.generatedForm.value);
+    this.presentAlert();
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Resposta salva',
+      message: 'A resposta foi salva e será enviada para o servidor',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="generatedForm">
+<form [formGroup]="generatedForm" (ngSubmit)="submitForm()">
     <app-short-text [title]="'Texto Curto'" [label]="'Resposta'"
     formControlName="q1"></app-short-text>
     <app-long-text [title]="'Texto Longo'" [label]="'Resposta'"
@@ -16,6 +16,6 @@
     <app-date [title]="'Data'" [label]="'Data'" [display]="'DD/MM/YYYY'"
     [picker]="'DD MMM YYYY'" formControlName="q7"></app-date>
     <div text-center>
-      <ion-button color="primary" (click)="submitForm()">Enviar respostas</ion-button>
-  </div>
+      <ion-button type="submit" color="primary">Enviar respostas</ion-button>
+    </div>
 </form>
