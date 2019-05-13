@@ -1,4 +1,4 @@
-<form [formGroup]="generatedForm">
+<form [formGroup]="generatedForm" (ngSubmit)="submitForm()">
   <% questions.forEach((question) => { -%>
   <%_ switch (question.type) {
         case "short_text": _%>
@@ -34,6 +34,6 @@
   <% } -%>
   <% }); -%>
   <div text-center>
-      <ion-button color="primary" (click)="submitForm()">Enviar respostas</ion-button>
+      <ion-button type="submit" color="primary">Enviar respostas</ion-button>
   </div>
 </form>
