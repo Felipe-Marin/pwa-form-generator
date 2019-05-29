@@ -2,6 +2,6 @@
   <h2>{{title}}</h2>
   <ion-item>
     <ion-label>{{label}}</ion-label>
-    <ion-datetime display-format="DD/MM/YYYY" picker-format="DD MM YYYY" (ionChange)="onChange($event.target.value)"></ion-datetime>
+    <ion-datetime displayFormat="{{display}}" pickerFormat="{{picker}}" (ionChange)="onChange($event.target.value)"></ion-datetime>
   </ion-item>
 </div>
