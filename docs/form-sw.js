@@ -56,13 +56,10 @@ function postGoogleForms(id, form){
         }
     ).then(function (response) {
         console.log(response);
-        navigator.serviceWorker.getRegistration(registration=>{
-            if(Notification.permission === 'granted'){
-                var options = {body: 'Resposta enviada com sucesso para o servidor'};
-                registration.showNotification('Resposta enviada!', options);
-                
-            }
-        });
-        
+        if(Notification.permission === 'granted'){
+            var options = {body: 'Resposta enviada com sucesso para o servidor'};
+            self.registration.showNotification('Resposta enviada!', options);
+            
+        }        
     });
 }
