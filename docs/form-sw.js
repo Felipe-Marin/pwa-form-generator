@@ -56,5 +56,9 @@ function postGoogleForms(id, form){
         }
     ).then(function (response) {
         console.log(response);
+        if(Notification.permission === 'granted'){
+            var notific = new Notification('Resposta enviada!');
+            
+        }
     });
 }

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1559704851191,
+  "timestamp": 1559705741070,
   "index": "/coleta-template-ionic/index.html",
   "assetGroups": [
     {
@@ -402,7 +402,7 @@
     "/coleta-template-ionic/assets/shapes.svg": "5413e95adabcb2cb639970051f55e0ddb64ace53",
     "/coleta-template-ionic/common.182cf3ae3adb457ba662.js": "b40e3bdd341e318bfb4757f3bde2dab9ec0536b9",
     "/coleta-template-ionic/es2015-polyfills.8ae128997d7d9cfd557c.js": "cc374625e735acf35772a731fd11a0db0d8448fb",
-    "/coleta-template-ionic/form-sw.js": "79a5b1b2380783640b65fab587f2acc14a13aaed",
+    "/coleta-template-ionic/form-sw.js": "c8ad5b2bb5b45774c9a639c50a6be75cdb74f22a",
     "/coleta-template-ionic/index.html": "0f5f422e8dfde3f13dd3291d6b6560895cf37b97",
     "/coleta-template-ionic/main.143a46f2b9ca530671d9.js": "a576adc91d6c5502906310bfb58b8c9df7fd7d1d",
     "/coleta-template-ionic/polyfills.1c26d1ea37e588a03cf7.js": "00e9bd99feab06209ab8a8fa226243c3550d0b6e",
