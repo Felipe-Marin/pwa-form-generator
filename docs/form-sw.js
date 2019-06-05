@@ -57,7 +57,8 @@ function postGoogleForms(id, form){
     ).then(function (response) {
         console.log(response);
         if(Notification.permission === 'granted'){
-            var notific = new Notification('Resposta enviada!');
+            var options = {body: 'Resposta enviada com sucesso para o servidor'};
+            var n = new Notification('Resposta enviada!', options);
             
         }
     });
