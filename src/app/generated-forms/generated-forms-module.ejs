@@ -1,0 +1,17 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+<%_ forms.forEach( form => { %>
+  import { FormN<%=form.formNumber%>Component } from './form-n<%=form.formNumber%>/form-n<%=form.formNumber%>.component';
+<%_ }); %>
+
+@NgModule({
+  declarations: [
+    <%_ forms.forEach( form => { %>
+        <%='FormN' + form.formNumber + 'Component' %>
+    <%_ }); %>
+  ],
+  imports: [
+    CommonModule
+  ]
+})
+export class GeneratedFormsModule { }

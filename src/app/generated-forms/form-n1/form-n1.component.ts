@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm} from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { FormControl, FormGroup} from '@angular/forms';
 import { ServerService } from '../services/server.service';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss'],
+  selector: 'app-form-n1',
+  templateUrl: './form-n1.component.html',
+  styleUrls: ['./form-n1.component.scss'],
 })
-export class FormComponent implements OnInit {
+export class FormN1Component implements OnInit {
 
 
   generatedForm = new FormGroup ({
@@ -41,7 +40,7 @@ export class FormComponent implements OnInit {
     'Resposta select 4',
   ];
 
-  constructor(private serverService: ServerService, public alertController: AlertController) { }
+  constructor(private serverService: ServerService) { }
 
   ngOnInit() { }
 
@@ -51,28 +50,7 @@ export class FormComponent implements OnInit {
 
   submitForm() {
     console.log(this.generatedForm.value);
-    if (Notification.permission === 'default') {
-      Notification.requestPermission().then(response => {
-        console.log(response);
-      });
-    }
-    if (true) { // get location == true
-      navigator.geolocation.getCurrentPosition(location => {
-        console.log('Geolocation: latitude = ' + location.coords.latitude + ' longitude = ' + location.coords.longitude);
-      });
-    }
     this.serverService.sendForm(this.generatedForm.value);
-    this.presentAlert();
-  }
-
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Resposta salva',
-      message: 'Enviando resposta...',
-      buttons: ['OK']
-    });
-
-    await alert.present();
   }
 
 }

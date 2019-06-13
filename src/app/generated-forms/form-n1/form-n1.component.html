@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Form Um</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content>
+  
+<form [formGroup]="generatedForm" (ngSubmit)="submitForm()">
+    <app-short-text [title]="'Texto Curto'" [label]="'Resposta'"
+    formControlName="q1"></app-short-text>
+    <app-long-text [title]="'Texto Longo'" [label]="'Resposta'"
+    formControlName="q2"></app-long-text>
+    <app-multiple-choice [title]="'Escolha Múltipla'" [label]="'Resposta'"
+    [options]="q3_options" formControlName="q3"></app-multiple-choice>
+    <app-checkbox [title]="'Checkbox'" [options]="q4_options"
+    formControlName="q4"></app-checkbox>
+    <app-select [title]="'Select'" [label]="'select'"
+    [placeholder]="'resposta'" [okText]="'Ok'"
+    [cancelText]="'Cancel'" [options]="q5_options"
+    formControlName="q5"></app-select>
+    <app-slider [title]="'Slider'" [min]="1" [max]="5"
+    [step]="1" formControlName="q6"></app-slider>
+    <app-date [title]="'Data'" [label]="'Data'" [display]="'DD/MM/YYYY'"
+    [picker]="'DD MMM YYYY'" formControlName="q7"></app-date>
+    <div text-center>
+      <ion-button type="submit" color="primary">Enviar respostas</ion-button>
+  </div>
+</form>
+
+</ion-content>
