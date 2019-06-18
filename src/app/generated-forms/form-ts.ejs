@@ -9,6 +9,7 @@ import { ServerService } from '../services/server.service';
 })
 export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
 
+  formId = '<%=id %>';
 
   generatedForm = new FormGroup ({
     <%_ questions.forEach((question) => { _%>
@@ -42,7 +43,7 @@ export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
 
   submitForm() {
     console.log(this.generatedForm.value);
-    this.serverService.sendForm(this.generatedForm.value);
+    this.serverService.sendForm(this.formId, this.generatedForm.value);
   }
 
 }

@@ -1,5 +1,5 @@
 export interface FormRequest {
-    id: string;
+    formId: string;
     date: number;
     form: Object;
     status: FormRequestStatus;

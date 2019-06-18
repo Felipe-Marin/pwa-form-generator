@@ -9,6 +9,7 @@ import { ServerService } from '../services/server.service';
 })
 export class FormN1Component implements OnInit {
 
+  formId = 'form1';
 
   generatedForm = new FormGroup ({
     q1: new FormControl(),
@@ -50,7 +51,7 @@ export class FormN1Component implements OnInit {
 
   submitForm() {
     console.log(this.generatedForm.value);
-    this.serverService.sendForm(this.generatedForm.value);
+    this.serverService.sendForm(this.formId, this.generatedForm.value);
   }
 
 }

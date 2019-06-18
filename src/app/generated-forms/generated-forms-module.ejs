@@ -1,8 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
+import { NgForageConfig, Driver } from 'ngforage';
+import { FormComponentsModule } from '../form-components/form-components.module';
 <%_ forms.forEach( form => { %>
   import { FormN<%=form.formNumber%>Component } from './form-n<%=form.formNumber%>/form-n<%=form.formNumber%>.component';
 <%_ }); %>
+
+const routes: Routes = [
+  {
+    path: 'forms',
+    component: FormN1Component,
+    children: [
+      {
+      <%_ forms.forEach( form => { %>
+        path: 'form-n<%=form.formNumber%>',
+        component: FormN<%=form.formNumber%>Component
+      <%_ }); %>
+      }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
@@ -11,7 +31,25 @@ import { CommonModule } from '@angular/common';
     <%_ }); %>
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    IonicModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FormComponentsModule,
+    RouterModule.forChild(routes)
+  ],
+  exports: [
+    <%_ forms.forEach( form => { %>
+      <%='FormN' + form.formNumber + 'Component' %>
+    <%_ }); %>
   ]
 })
-export class GeneratedFormsModule { }
+
+export class GeneratedFormsModule {
+  public constructor(ngfConfig: NgForageConfig) {
+    ngfConfig.configure({
+      name: 'FormGenerator',
+      driver: [Driver.INDEXED_DB]
+    });
+  }
+}

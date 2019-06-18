@@ -1,6 +1,8 @@
 {
     "forms": [
-        {   "title": "Form Um",
+        {   
+            "id": "form1",
+            "title": "Form Um",
             "submit_button_text": "Enviar respostas",
             "questions": [
                 {

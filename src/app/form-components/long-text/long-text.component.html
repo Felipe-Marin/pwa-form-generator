@@ -2,6 +2,6 @@
   <h2>{{title}}</h2>
   <ion-item>
     <ion-label position="floating">{{label}}</ion-label>
-    <ion-textarea (ionInput)="onChange($event)"></ion-textarea>
+    <ion-textarea (ionInput)="onChange($event.target.value)"></ion-textarea>
   </ion-item>
 </div>

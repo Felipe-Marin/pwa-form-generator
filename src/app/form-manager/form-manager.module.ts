@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
+import { GeneratedFormsModule } from '../generated-forms/generated-forms.module';
+import { FormListComponent } from './form-list/form-list.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [FormListComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    GeneratedFormsModule
+  ],
+  exports: [
+    FormListComponent
   ]
 })
 export class FormManagerModule { }

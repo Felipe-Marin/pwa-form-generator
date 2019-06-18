@@ -8,7 +8,7 @@ const config = JSON.parse(fs.readFileSync(configFile));
 config.forms = numerateForms(config.forms);
 generateFormsComponents(config.forms);
 generateFormsModule(config);
-generateRouter(config);
+//generateRouter(config);
 generateFormsList(config);
 
 /**
@@ -42,7 +42,7 @@ function generateFormsComponents(forms){
         }
         fs.writeFileSync(`${destFormsFolder}/form-n${form.formNumber}/form-n${form.formNumber}.component.html`, htmlContent);
         fs.writeFileSync(`${destFormsFolder}/form-n${form.formNumber}/form-n${form.formNumber}.component.ts`, tsContent);
-        fs.writeFileSync(`${destFormsFolder}/form-n${form.formNumber}/form-n${form.formNumber}.component.css`, cssContent);
+        fs.writeFileSync(`${destFormsFolder}/form-n${form.formNumber}/form-n${form.formNumber}.component.scss`, cssContent);
     });
 }
 

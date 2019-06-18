@@ -9,10 +9,10 @@ export class ServerService {
 
   constructor(private localStorageService: FormLocalStorageService) { }
 
-  public sendForm(form: Object) {
+  public sendForm(formId: string, form: Object) {
     const date = Date.now();
     const formRequest: FormRequest = {
-      id: String(date),
+      formId: formId,
       date: date,
       form: form,
       status: FormRequestStatus.pending

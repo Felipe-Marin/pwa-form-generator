@@ -14,7 +14,7 @@ export class FormLocalStorageService implements OnInit {
   }
 
   public setForm(formRequest: FormRequest) {
-    return this.ngf.setItem<FormRequest>(formRequest.id, formRequest);
+    return this.ngf.setItem<FormRequest>(String(formRequest.date), formRequest);
   }
 
   public getForm(id: string) {
