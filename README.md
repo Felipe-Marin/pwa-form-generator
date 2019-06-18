@@ -153,7 +153,7 @@ Controle onde se pode selecionar um valor dentro do alcance definido.
 |step|Passo do valor|
 
 ### Data (type: date)  
-Valor de data, podende ser desde apenas um dia da semana até uma data completa com dia, mês, ano e horário.
+Valor de data, podende ser desde apenas um dia da semana até uma data completa com dia, mês, ano e horário. 
 ```typescript
 {
     "id": string,
