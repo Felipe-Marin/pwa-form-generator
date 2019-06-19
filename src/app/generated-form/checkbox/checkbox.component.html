@@ -1,7 +1,0 @@
-<div>
-  <h2>{{title}}</h2>
-  <ion-item *ngFor="let option of options" >
-    <ion-label>{{option.val}}</ion-label>
-    <ion-checkbox slot="start" [(ngModel)]="option.isChecked" (ionChange)="onChange(getValue())"></ion-checkbox>
-  </ion-item>
-</div>

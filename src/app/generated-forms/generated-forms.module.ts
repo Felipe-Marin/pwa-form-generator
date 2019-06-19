@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
+import { NgForageConfig, Driver } from 'ngforage';
 import { FormComponentsModule } from '../form-components/form-components.module';
 
   import { FormN1Component } from './form-n1/form-n1.component';
-import { NgForageConfig, Driver } from 'ngforage';
 
 
 const routes: Routes = [
@@ -44,6 +44,7 @@ const routes: Routes = [
 
   ]
 })
+
 export class GeneratedFormsModule {
   public constructor(ngfConfig: NgForageConfig) {
     ngfConfig.configure({
