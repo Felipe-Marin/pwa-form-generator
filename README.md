@@ -1,5 +1,41 @@
 Disponível no GitHub Pages: https://felipe-marin.github.io/coleta-template-ionic/
 
+# Instalação
+
+1. Clonar repositório
+```
+git clone https://felipe-marin.github.io/coleta-template-ionic.git
+```
+2. Instalar dependências com o NPM
+```
+npm i
+```
+
+## Docker
+Alternativamente pode-se usar um conteiner do Docker com o projeto:
+
+# Utilização
+
+1. Editar o arquivo de configuração "config.json"
+
+2. Usar comando para gerar os arquivos
+```
+pwaforms generate
+```
+3. O projeto vai ser gerado e ficar disponível na pasta "src". O mesmo pode ser editado caso seja necessário incluir alguma nova funcionalidade
+
+4. Para testar o aplicativo localmente usar o comando:
+```
+pwaforms run
+```
+
+5. Uma versão de produção do aplicativo pode ser gerada e ficará disponível na pasta "docs"
+```
+pwaforms build
+```
+
+https://console.developers.google.com/apis/dashboard
+
 # Arquivo de configuração (config.json)
 
 O arquivo de configuração contém definições do aplicativo, a lista de formulários e suas respectivas listas de questões.
@@ -7,14 +43,16 @@ O arquivo de configuração contém definições do aplicativo, a lista de formu
 ```typescript
 {
     "name": string,
-    "color": string,
+    "google_sheets": boolean,
+    "credentials": string,
     "forms": Form[]
 }
 ```
 |Campo|Descrição|
 |-----|---------|
 |name| Nome do aplicativo, será exibido na toolbar e no atalho adicionável a tela inicial do dispositivo|
-|color| Valor hexadecimal da cor primária usada na interface do aplicativo|
+|google_sheets|Se verdadeiro gera planilha no Google Sheets para armazenar os dados das respostas|
+|credentials|Nome do arquivo com as credenciais do Google oAuth|
 |forms| Lista de objetos do tipo Form
 
 ## Estrutura de objeto da classe Form:
