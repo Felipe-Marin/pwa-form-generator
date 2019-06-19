@@ -1,0 +1,49 @@
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup} from '@angular/forms';
+import { ServerService } from '../services/server.service';
+
+@Component({
+  selector: 'app-form-n<%=formNumber %>',
+  templateUrl: './form-n<%=formNumber %>.component.html',
+  styleUrls: ['./form-n<%=formNumber %>.component.scss'],
+})
+export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
+
+  formId = '<%=id %>';
+
+  generatedForm = new FormGroup ({
+    <%_ questions.forEach((question) => { _%>
+    <%= question.id %>: new FormControl(),
+    <%_ }); _%>
+  });
+
+  <%_ questions.forEach((question) => {
+    if(question.hasOwnProperty('options')){ _%>
+  <%= question.id %>_options = [
+      <%_ if(question.type === 'checkbox'){
+        question.options.forEach((option) => { _%>
+    {val: '<%= option %>', isChecked: false},
+        <%_ });
+      } else {
+        question.options.forEach((option) => { _%>
+    '<%= option %>',
+        <%_ });
+      } _%>
+  ];
+    <%_ }
+  }); _%>
+
+  constructor(private serverService: ServerService) { }
+
+  ngOnInit() { }
+
+  printForm() {
+    console.log(this.generatedForm.value);
+  }
+
+  submitForm() {
+    console.log(this.generatedForm.value);
+    this.serverService.sendForm(this.formId, this.generatedForm.value);
+  }
+
+}
