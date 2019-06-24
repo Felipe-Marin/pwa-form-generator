@@ -1,4 +1,7 @@
 {
+    "name": "App",
+    "google_sheets": true,
+    "filename": "test sheet",
     "forms": [
         {   
             "id": "form1",
