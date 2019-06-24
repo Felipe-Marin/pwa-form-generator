@@ -13,6 +13,20 @@ npm i
 
 ## Docker
 Alternativamente pode-se usar um conteiner do Docker com o projeto:
+Executar imagem usando o comando:
+```
+docker run -v /hostpath/:/shared/ -it -d imageid
+```
+Onde '/hostpath/' é o caminho da pasta compartilhada no computador host e 'imageid' o id da imagem no docker.
+
+O arquivo config.json deverá ser colocado nessa pasta.
+A aplicativo gerado ficará disponível na pasta 'docs' dentro da pasta compartilhada.
+
+Para construir o aplicativo usar o comando:
+```
+docker exec containerId node build.js
+```
+Onde 'containerId' é o id do container em execução após o run da imagem.
 
 # Utilização
 
