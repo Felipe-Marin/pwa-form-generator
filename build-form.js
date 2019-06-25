@@ -8,12 +8,22 @@ const configFile = 'config.json';
 const config = JSON.parse(fs.readFileSync(configFile));
 
 config.forms = numerateForms(config.forms);
+generateIndex(config);
+generateManifest(config);
 generateFormsComponents(config.forms);
 generateFormsModule(config);
 generateFormsList(config);
+generateResponseList(config);
+let url = '';
+if(config.hasOwnProperty('url')){
+  url = config.url;
+}
 if(config.google_sheets){
   generateGoogleSheet(config);
+}else{
+  generateServiceWorker(url);
 }
+
 
 /**
  * Numera forms
@@ -83,9 +93,48 @@ function generateFormsList(config){
     fs.writeFileSync(destFormListFile, FormListContent);
 }
 
-//gera view da lista de respostas
+function generateResponseList(config){
+  const srcEjsResponseListFile = 'src/app/form-manager/response-list/response-list.ejs';
+  const destResponseListFile = 'src/app/form-manager/response-list/response-list.component.ts';
+  const srcEjsResponseViewFile = 'src/app/form-manager/response-view/response-view.ejs';
+  const destResponseViewFile = 'src/app/form-manager/response-view/response-view.component.ts';
+  const templateResponseList = fs.readFileSync(srcEjsResponseListFile, 'utf-8');
+  const templateResponseView = fs.readFileSync(srcEjsResponseViewFile, 'utf-8');
+  let ResponseListContent = ejs.render(templateResponseList, config);
+  let ResponseViewContent = ejs.render(templateResponseView, config);
+  fs.writeFileSync(destResponseListFile, ResponseListContent);
+  fs.writeFileSync(destResponseViewFile, ResponseViewContent);
+}
 
-//gera arquivos com configurações gerais do projeto
+/**
+ * Gera service worker
+ * @param config 
+ */
+function generateServiceWorker(url){
+  const srcEjsSW = 'src/form-sw.ejs';
+  const destSWFile = 'src/form-sw.js';
+  const templateSW = fs.readFileSync(srcEjsSW, 'utf-8');
+  let swContent = ejs.render(templateSW, {url: url});
+  fs.writeFileSync(destSWFile, swContent);
+}
+
+function generateIndex(config){
+  const srcEjsIndex = 'src/index.ejs';
+  const destIndexFile = 'src/index.html';
+  const templateIndex = fs.readFileSync(srcEjsIndex, 'utf-8');
+  let indexContent = ejs.render(templateIndex, config);
+  fs.writeFileSync(destIndexFile, indexContent);
+}
+
+function generateManifest(config){
+  const srcEjsManifest = 'src/manifest.ejs';
+  const destManifestFile = 'src/manifest.json';
+  const templateManifest = fs.readFileSync(srcEjsManifest, 'utf-8');
+  let manifestContent = ejs.render(templateManifest, config);
+  fs.writeFileSync(destManifestFile, manifestContent);
+}
+
+//gera view da lista de respostas
 
 //gera planilha do google sheets e web service no app scripts
 
@@ -212,7 +261,9 @@ function callAppsScript(auth, sourceCode, manifestCode) {
           }
         }, (err, res) => {
           if (err) return console.log(err);
-          console.log(`https://script.google.com/macros/s/${res.data.deploymentId}/exec`);
+          url = `https://script.google.com/macros/s/${res.data.deploymentId}/exec`;
+          console.log(url);
+          generateServiceWorker(url);
         });
       });
     });

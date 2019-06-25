@@ -39,7 +39,7 @@ function submitForms(){
 
 
 function postGoogleForms(id, form){
-    const formUrl = 'https://script.google.com/macros/s/AKfycbysuIM7rjsQlrOuGwBWKSOX5mZQtFboeYMiBIqlEoDoxbEjn205aaRZ-dy3QItemm1Z/exec';
+    const formUrl = '<%=url%>';
     let formBody = new URLSearchParams();
     for(let k in form){
         formBody.append(k, form[k]);

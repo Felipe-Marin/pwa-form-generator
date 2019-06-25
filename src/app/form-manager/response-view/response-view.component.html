@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color='primary'>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="#/tabs/tab2/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Respostas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let response of responseList">
+      <ion-label>
+        <h2>{{response.questionTitle}}</h2>
+        <h3>{{response.response}}</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

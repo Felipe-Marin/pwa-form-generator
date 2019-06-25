@@ -9,7 +9,9 @@ import { FormLocalStorageService } from 'src/app/generated-forms/services/form-l
 export class ResponseListComponent implements OnInit {
 
   forms = {
-    form1: {title: 'Form Um'},
+    <%_ forms.forEach(form => { _%>
+    <%= form.id %>: {title: '<%= form.title %>'},
+    <%_ }); _%>
   };
 
   responseList: Object[];

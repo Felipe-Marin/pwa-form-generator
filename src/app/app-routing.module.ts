@@ -5,7 +5,7 @@ const routes: Routes = [
   { path: '', loadChildren: './tabs/tabs.module#TabsPageModule' },
 
   {path: 'form-list', loadChildren: './generated-forms/generated-forms.module#GeneratedFormsModule'},
-
+  {path: 'response', loadChildren: './form-manager/form-manager.module#FormManagerModule'}
 ];
 
 @NgModule({

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
-import { GeneratedFormModule } from '../generated-form/generated-form.module';
 import { FormManagerModule } from '../form-manager/form-manager.module';
 
 @NgModule({

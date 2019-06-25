@@ -24,4 +24,12 @@ export class FormLocalStorageService implements OnInit {
   public getFormsKeys() {
     return this.ngf.keys();
   }
+
+  public getForms() {
+    const formsList = [];
+    this.ngf.iterate((value) => {
+      formsList.push(value);
+    });
+    return formsList;
+  }
 }
