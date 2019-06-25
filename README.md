@@ -1,8 +1,5 @@
 Essa ferramenta possibilita gerar aplicativos para coleta de dados com formulários, preenchendo um arquivo de configurações.
 
-Uma versão do aplicativo gerado está disponível no GitHub Pages:  
-https://felipe-marin.github.io/coleta-template-ionic/
-
 # Instalação
 
 1. Clonar repositório
