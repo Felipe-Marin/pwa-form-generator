@@ -9,6 +9,8 @@
             "id": "form1",
             "title": "Form Um",
             "submit_button_text": "Enviar respostas",
+            "show_notification": true,
+            "get_location": true,
             "questions": [
                 {
                     "id": "q1",

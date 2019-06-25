@@ -245,6 +245,7 @@ function callAppsScript(auth, sourceCode, manifestCode) {
       },
     }, {}, (err, res) => {
       if (err) return console.log(`The API updateContent method returned an error: ${err}`);
+      console.log('Entre no link abaixo e utilize a opção "Deploy as Web App" do menu "Publish"')
       console.log(`https://script.google.com/d/${res.data.scriptId}/edit`);
       script.projects.versions.create({
         scriptId: res.data.scriptId,
@@ -262,7 +263,7 @@ function callAppsScript(auth, sourceCode, manifestCode) {
         }, (err, res) => {
           if (err) return console.log(err);
           url = `https://script.google.com/macros/s/${res.data.deploymentId}/exec`;
-          console.log(url);
+          //console.log(url);
           generateServiceWorker(url);
         });
       });
@@ -325,6 +326,10 @@ function generateSourceCode(filename, sheetList){
         }else{
           rowContents.push(e.parameters[key][0]);
         }
+      }
+      if('locationLat' in e.parameters && 'locationLon' in e.parameters){
+        rowContents.push(e.parameters['locationLat'][0]);
+        rowContents.push(e.parameters['locationLon'][0]);
       }
       sheet.appendRow(rowContents);
       var output = JSON.stringify({status: 'success', message: 'success'});

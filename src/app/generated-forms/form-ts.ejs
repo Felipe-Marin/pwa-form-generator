@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup} from '@angular/forms';
 import { ServerService } from '../services/server.service';
+import { ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-n<%=formNumber %>',
@@ -10,6 +12,10 @@ import { ServerService } from '../services/server.service';
 export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
 
   formId = '<%=id %>';
+
+  notification = <%=show_notification %>;
+
+  location = <%=get_location %>;
 
   generatedForm = new FormGroup ({
     <%_ questions.forEach((question) => { _%>
@@ -33,7 +39,7 @@ export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
     <%_ }
   }); _%>
 
-  constructor(private serverService: ServerService) { }
+  constructor(private serverService: ServerService, public toastController: ToastController, public router: Router) { }
 
   ngOnInit() { }
 
@@ -43,7 +49,29 @@ export class <%='FormN' + formNumber + 'Component'%> implements OnInit {
 
   submitForm() {
     console.log(this.generatedForm.value);
-    this.serverService.sendForm(this.formId, this.generatedForm.value);
+    if (this.location) {
+      navigator.geolocation.getCurrentPosition(geolocation => {
+        this.generatedForm.value.locationLon = geolocation.coords.longitude;
+        this.generatedForm.value.locationLat = geolocation.coords.latitude;
+        this.serverService.sendForm(this.formId, this.generatedForm.value);
+      }, err => {
+        this.serverService.sendForm(this.formId, this.generatedForm.value);
+      });
+    } else {
+      this.serverService.sendForm(this.formId, this.generatedForm.value);
+    }
+    this.presentToast();
+    this.router.navigateByUrl('#/tabs/tab1');
+    if (this.notification) {
+      Notification.requestPermission();
+    }
   }
 
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Resposta salva.',
+      duration: 2000
+    });
+    toast.present();
+  }
 }

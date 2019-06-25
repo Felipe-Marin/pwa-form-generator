@@ -21,7 +21,7 @@ function submitForms(){
                 if(cursor){
                     let value = cursor.value;
                     if(value.status == 0){
-                        postGoogleForms(value.id, value.form);
+                        postGoogleForms(value.formId, value.form);
                         value.status = 1;
                         cursor.update(value);
                     }
@@ -38,15 +38,18 @@ function submitForms(){
 }
 
 
-function postGoogleForms(id, form){
-    const formUrl = 'https://script.google.com/macros/s/AKfycbysuIM7rjsQlrOuGwBWKSOX5mZQtFboeYMiBIqlEoDoxbEjn205aaRZ-dy3QItemm1Z/exec';
+function postGoogleForms(formId, form){
+    const formUrl = 'https://script.google.com/macros/s/AKfycbzISEMzIqfggbOgAixcpdff_J4ksbxwSPGMAxqJe1Zhc0WMR3Dfpdogyvw6Ur7kv7or/exec';
     let formBody = new URLSearchParams();
+    formBody.append('sheetName', formId);
     for(let k in form){
         formBody.append(k, form[k]);
     }
     fetch(formUrl, {
-        mode: 'no-cors',
         method: 'post',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
         body: formBody
         }
     ).then(function (response) {
