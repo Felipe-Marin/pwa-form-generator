@@ -1,13 +1,13 @@
 {
-    "name": "App",
-    "short_name": "app",
+    "name": "App de formulário",
+    "short_name": "App",
     "url": "",
     "google_sheets": true,
-    "filename": "test sheet",
+    "filename": "form",
     "forms": [
         {   
             "id": "form1",
-            "title": "Form Um",
+            "title": "Formulário",
             "submit_button_text": "Enviar respostas",
             "show_notification": true,
             "get_location": true,

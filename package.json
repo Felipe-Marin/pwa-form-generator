@@ -4,10 +4,10 @@
   "author": "Felipe Marin",
   "homepage": "https://github.com/felipe-marin/pwaforms/",
   "scripts": {
-    "generate": "node ./src/app/generated-form/build-form.js",
+    "generate": "node build-form.js",
     "ng": "ng",
-    "start": "node ./src/app/generated-form/build-form.js && ng serve",
-    "build": "node ./src/app/generated-form/build-form.js && ng build",
+    "start": "node build-form.js && ng serve",
+    "build": "node build-form.js && ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
