@@ -4,7 +4,7 @@ Essa ferramenta possibilita gerar aplicativos para coleta de dados com formulár
 
 1. Clonar repositório
 ```
-git clone https://felipe-marin.github.io/coleta-template-ionic.git
+git clone https://github.com/Felipe-Marin/pwa-form-generator.git
 ```
 2. Instalar dependências com o NPM
 ```
