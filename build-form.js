@@ -180,7 +180,7 @@ function authorize(credentials, callback, filename, sheetList) {
 
   // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
-    if (err) return getAccessToken(oAuth2Client, callback);
+    if (err) return getAccessToken(oAuth2Client, callback, filename, sheetList);
     oAuth2Client.setCredentials(JSON.parse(token));
     callback(oAuth2Client, generateSourceCode(filename, sheetList), generateManifestCode());
   });
@@ -192,7 +192,7 @@ function authorize(credentials, callback, filename, sheetList) {
  * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
  * @param {getEventsCallback} callback The callback for the authorized client.
  */
-function getAccessToken(oAuth2Client, callback) {
+function getAccessToken(oAuth2Client, callback, filename, sheetList) {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
     scope: SCOPES,
@@ -212,7 +212,7 @@ function getAccessToken(oAuth2Client, callback) {
         if (err) return console.error(err);
         console.log('Token stored to', TOKEN_PATH);
       });
-      callback(oAuth2Client);
+      callback(oAuth2Client, generateSourceCode(filename, sheetList), generateManifestCode());
     });
   });
 }

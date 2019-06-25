@@ -40,15 +40,21 @@ function submitForms(){
 
 function postGoogleForms(formId, form){
     const formUrl = '<%=url%>';
-    let formBody = new URLSearchParams();
-    formBody.append('sheetName', formId);
+    let formBody = []
+    formBody.push(encodeURIComponent('sheetName') + '=' + encodeURIComponent(formId));
     for(let k in form){
-        formBody.append(k, form[k]);
+        var encodedKey = encodeURIComponent(k);
+        var encodedValue = encodeURIComponent(form[k]);
+        formBody.push(encodedKey + "=" + encodedValue);
     }
-    fetch(formUrl, {
+    formBody = formBody.join('&');
+    fetch(formUrl + '?' + formBody, {
+        method: 'get',
         mode: 'no-cors',
-        method: 'post',
-        body: formBody
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept': '*/*'
+        },
         }
     ).then(function (response) {
         console.log(response);
