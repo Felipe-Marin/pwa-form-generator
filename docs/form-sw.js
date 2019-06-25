@@ -47,8 +47,11 @@ function postGoogleForms(formId, form){
     }
     fetch(formUrl, {
         method: 'post',
+        mode: 'no-cors',
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Host': 'script.google.com',
+            'Accept': '*/*'
         },
         body: formBody
         }
