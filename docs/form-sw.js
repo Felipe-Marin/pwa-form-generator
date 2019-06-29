@@ -39,21 +39,22 @@ function submitForms(){
 
 
 function postGoogleForms(formId, form){
-    const formUrl = 'https://script.google.com/macros/s/AKfycbzISEMzIqfggbOgAixcpdff_J4ksbxwSPGMAxqJe1Zhc0WMR3Dfpdogyvw6Ur7kv7or/exec';
-    let formBody = new URLSearchParams();
-    formBody.append('sheetName', formId);
+    const formUrl = 'https://script.google.com/macros/s/AKfycbxmJefPVHDM14oia-jAt_r62pVqAP_2Lckc-o0FrfTXfLeCoAzPaZyPv1McwQa_5TEf/exec';
+    let formBody = []
+    formBody.push(encodeURIComponent('sheetName') + '=' + encodeURIComponent(formId));
     for(let k in form){
-        formBody.append(k, form[k]);
+        var encodedKey = encodeURIComponent(k);
+        var encodedValue = encodeURIComponent(form[k]);
+        formBody.push(encodedKey + "=" + encodedValue);
     }
-    fetch(formUrl, {
-        method: 'post',
+    formBody = formBody.join('&');
+    fetch(formUrl + '?' + formBody, {
+        method: 'get',
         mode: 'no-cors',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
-            'Host': 'script.google.com',
             'Accept': '*/*'
         },
-        body: formBody
         }
     ).then(function (response) {
         console.log(response);

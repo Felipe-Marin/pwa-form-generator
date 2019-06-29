@@ -10,24 +10,18 @@ import { FormComponentsModule } from '../form-components/form-components.module'
 <%_ }); %>
 
 const routes: Routes = [
+  <%_ forms.forEach( form => { %>
   {
-    path: 'forms',
-    component: FormN1Component,
-    children: [
-      {
-      <%_ forms.forEach( form => { %>
-        path: 'form-n<%=form.formNumber%>',
-        component: FormN<%=form.formNumber%>Component
-      <%_ }); %>
-      }
-    ]
-  }
+    path: 'form-n<%=form.formNumber%>',
+    component: FormN<%=form.formNumber%>Component
+  },
+  <%_ }); %>
 ];
 
 @NgModule({
   declarations: [
     <%_ forms.forEach( form => { %>
-        <%='FormN' + form.formNumber + 'Component' %>
+        <%='FormN' + form.formNumber + 'Component' %>,
     <%_ }); %>
   ],
   imports: [
@@ -40,7 +34,7 @@ const routes: Routes = [
   ],
   exports: [
     <%_ forms.forEach( form => { %>
-      <%='FormN' + form.formNumber + 'Component' %>
+      <%='FormN' + form.formNumber + 'Component' %>,
     <%_ }); %>
   ]
 })

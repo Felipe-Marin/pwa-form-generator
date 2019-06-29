@@ -10,24 +10,18 @@ import { FormComponentsModule } from '../form-components/form-components.module'
 
 
 const routes: Routes = [
+
   {
-    path: 'forms',
-    component: FormN1Component,
-    children: [
-      {
+    path: 'form-n1',
+    component: FormN1Component
+  },
 
-        path: 'form-n1',
-        component: FormN1Component
-
-      }
-    ]
-  }
 ];
 
 @NgModule({
   declarations: [
 
-        FormN1Component
+        FormN1Component,
 
   ],
   imports: [
@@ -40,7 +34,7 @@ const routes: Routes = [
   ],
   exports: [
 
-      FormN1Component
+      FormN1Component,
 
   ]
 })

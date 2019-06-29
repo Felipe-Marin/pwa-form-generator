@@ -9,7 +9,7 @@ import { FormLocalStorageService } from 'src/app/generated-forms/services/form-l
 export class ResponseListComponent implements OnInit {
 
   forms = {
-    form1: {title: 'Form Um'},
+    form1: {title: 'Formulário'},
   };
 
   responseList: Object[];

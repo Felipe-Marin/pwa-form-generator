@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
   
-<ion-content>
+<ion-content padding>
   
 <form [formGroup]="generatedForm" (ngSubmit)="submitForm()">
   <% questions.forEach((question) => { -%>
@@ -45,7 +45,7 @@
   <% } -%>
   <% }); -%>
   <div text-center>
-      <ion-button type="submit" color="primary">Enviar respostas</ion-button>
+      <ion-button type="submit" color="primary"><%=submit_button_text%></ion-button>
   </div>
 </form>
 

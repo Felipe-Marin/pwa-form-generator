@@ -3,11 +3,11 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="tabs/tab1"></ion-back-button>
     </ion-buttons>
-    <ion-title>Form Um</ion-title>
+    <ion-title>Formulário</ion-title>
   </ion-toolbar>
 </ion-header>
   
-<ion-content>
+<ion-content padding>
   
 <form [formGroup]="generatedForm" (ngSubmit)="submitForm()">
     <app-short-text [title]="'Texto Curto'" [label]="'Resposta'"

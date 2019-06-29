@@ -32,6 +32,7 @@ function numerateForms(forms){
     let i = 1;
     forms.forEach(form => {
         form.formNumber = i;
+        i++;
     });
     return forms;
 }
