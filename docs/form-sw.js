@@ -39,7 +39,7 @@ function submitForms(){
 
 
 function postGoogleForms(formId, form){
-    const formUrl = 'https://script.google.com/macros/s/AKfycbxmJefPVHDM14oia-jAt_r62pVqAP_2Lckc-o0FrfTXfLeCoAzPaZyPv1McwQa_5TEf/exec';
+    const formUrl = 'https://script.google.com/macros/s/AKfycbysv01XRVanoBgKaGvoNyTApdSkA1P7LW_vdQr6SvkCf9rE4zyw9d8Th9ECwLgw_PxN3A/exec';
     let formBody = []
     formBody.push(encodeURIComponent('sheetName') + '=' + encodeURIComponent(formId));
     for(let k in form){
