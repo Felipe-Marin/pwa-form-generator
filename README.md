@@ -31,6 +31,17 @@ npm run start
 npm run build
 ```
 
+Em casos em que a URL do aplicativo não fica no domínio principal, mas em um path, como por exemplo:  
+```
+url.com/meuapp/  
+```
+
+Deverá ser usado o parâmetro --base-href=\<path do aplicativo\> junto com o comando ng build para construir o aplicativo. Exemplo para a url acima:
+```
+ng build --prod --base-href=/meuapp/
+```
+Isso indicará para a aplicação onde ela deve procurar os arquivos.  
+
 
 ## Docker
 Alternativamente pode-se usar um conteiner do Docker com o projeto:
